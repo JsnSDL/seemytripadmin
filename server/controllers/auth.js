@@ -2,7 +2,7 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
-
+const axios = require ('axios');
 // Signup Controller
 exports.signup = async (req, res) => {
   const { name, email, password } = req.body;
@@ -64,34 +64,30 @@ exports.login = async (req, res) => {
     }
 };
 
-const USER_INFO_URL = 'https://www.googleapis.com/oauth2/v3/userinfo';
+// const USER_INFO_URL = 'https://www.googleapis.com/oauth2/v3/userinfo';
 
-// Google Auth Controller
-exports.googleAuth = async (req, res) => {
-    const { token } = req.body;
-    console.log('Token received:', token);
-  
-    try {
-        // Fetch user info from Google using the access token
-        const response = await axios.get(USER_INFO_URL, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+// exports.googleAuth = async (req, res) => {
+//   const { token } = req.body;
+//   try {
+//       const response = await axios.get(USER_INFO_URL, {
+//           headers: {
+//               Authorization: `Bearer ${token}`,
+//           },
+//       });
 
-        const userInfo = response.data;
-        console.log('User info:', userInfo);
+//       const userInfo = response.data;
+//       const jwtToken = jwt.sign({ user: userInfo }, process.env.SECRET, { expiresIn: '1h' });
 
-        // Handle the user info as needed
-        // For example, send it back to the client
-        res.status(200).json({ user: userInfo });
-        
-    } catch (error) {
-        console.error('Failed to fetch user info:', error.response?.data || error.message);
-        res.status(error.response?.status || 401).json({ message: 'Failed to fetch user info', details: error.response?.data });
-    }
-};
-
+//       res.status(200).json({ token: jwtToken, user: userInfo, expiresIn: 3600 });
+//   } catch (error) {
+//       console.error('Failed to fetch user info:', error.response?.data || error.message);
+//       res.status(error.response?.status || 401).json({
+//           message: 'Failed to fetch user info',
+//           details: error.response?.data,
+//           error: error.message,
+//       });
+//   }
+// };
 
 
 exports.deleteUser = async (req, res) => {
