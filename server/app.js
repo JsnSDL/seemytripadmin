@@ -3,7 +3,8 @@ const { syncModels } = require('./models');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoute'); 
 const userRoutes = require('./routes/userRoute'); 
-const revenueRoutes = require('./routes/revenueRoute')
+const revenueRoutes = require('./routes/revenueRoute');
+const trainRoutes = require('./routes/trainsRoute')
 
 const app = express();
 
@@ -14,7 +15,8 @@ app.use(express.json());
 // Routes
 app.use('/api', authRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/booking',revenueRoutes)
+app.use('/api/booking',revenueRoutes);
+app.use('/api/trains',trainRoutes);
 
 
 // syncModels();
