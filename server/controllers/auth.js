@@ -64,30 +64,30 @@ exports.login = async (req, res) => {
     }
 };
 
-// const USER_INFO_URL = 'https://www.googleapis.com/oauth2/v3/userinfo';
+const USER_INFO_URL = 'https://www.googleapis.com/oauth2/v3/userinfo';
 
-// exports.googleAuth = async (req, res) => {
-//   const { token } = req.body;
-//   try {
-//       const response = await axios.get(USER_INFO_URL, {
-//           headers: {
-//               Authorization: `Bearer ${token}`,
-//           },
-//       });
+exports.googleAuth = async (req, res) => {
+  const { token } = req.body;
+  try {
+      const response = await axios.get(USER_INFO_URL, {
+          headers: {
+              Authorization: `Bearer ${token}`,
+          },
+      });
 
-//       const userInfo = response.data;
-//       const jwtToken = jwt.sign({ user: userInfo }, process.env.SECRET, { expiresIn: '1h' });
+      const userInfo = response.data;
+      const jwtToken = jwt.sign({ user: userInfo }, process.env.SECRET, { expiresIn: '1h' });
 
-//       res.status(200).json({ token: jwtToken, user: userInfo, expiresIn: 3600 });
-//   } catch (error) {
-//       console.error('Failed to fetch user info:', error.response?.data || error.message);
-//       res.status(error.response?.status || 401).json({
-//           message: 'Failed to fetch user info',
-//           details: error.response?.data,
-//           error: error.message,
-//       });
-//   }
-// };
+      res.status(200).json({ token: jwtToken, user: userInfo, expiresIn: 3600 });
+  } catch (error) {
+      console.error('Failed to fetch user info:', error.response?.data || error.message);
+      res.status(error.response?.status || 401).json({
+          message: 'Failed to fetch user info',
+          details: error.response?.data,
+          error: error.message,
+      });
+  }
+};
 
 
 exports.deleteUser = async (req, res) => {
