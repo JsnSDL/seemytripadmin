@@ -112,8 +112,18 @@ import Setting from "./layouts/Setting";
 import { ThemeContext } from "../context/ThemeContext";
 import HomeTrain from "./components/Dashboard/TrainDashboard";
 import HomeFlights from "./components/Dashboard/Flights";
-import  UserProfiles  from "./components/Dashboard/UserProfiles";
-import BookingInformation from "./components/Dashboard/BookingInformation";
+import  UserProfiles  from "./components/All management/Train Management/UserProfiles";
+import BookingInformation from "./components/All management/Train Management/BookingInformation";
+import BookingManagement from "./components/All management/Train Management/BookingManagement";
+import TrainManagement from "./components/All management/Train Management/TrainManagement";
+import FlightUserProfiles from "./components/All management/Flight Management/UserProfile";
+import FlightBookingInformation from "./components/All management/Flight Management/BookingInformation";
+import FlightBookingManagement from "./components/All management/Flight Management/BookingManagement";
+import FlightManagement from "./components/All management/Flight Management/FlightManagement";
+import HomeHotel from "./components/Dashboard/HotelDashboard";
+import HotelBookingManagement from "./components/All management/Hotel Management/HotelBookingManagement";
+import HotelManagement from "./components/All management/Hotel Management/HotelMangement";
+import HotelUserProfiles from "./components/All management/Hotel Management/UserProfile";
 
 
 const Markup = () => {
@@ -124,6 +134,7 @@ const Markup = () => {
     { url: "dashboard", component: <Home/> },
     { url: "dashboard-train", component: <HomeTrain/> },
     { url: "dashboard-flights", component: <HomeFlights/> },
+    { url: "dashboard-hotels", component: <HomeHotel/> },
     { url: "dashboard-dark", component: <DashboardDark/> },
     { url: "guest-list", component: <GuestList/> },
     { url: "guest-details", component: <GuestDetails/> },
@@ -142,8 +153,21 @@ const Markup = () => {
 	
 	/// Management
     { url: "app-profile", component: <AppProfile/> },
+    // Train Management
     { url: "userprofile", component: <UserProfiles/> },
     { url: "bookinginformation", component: <BookingInformation/> },
+    { url: "bookingmanagement", component: <BookingManagement/> },
+    { url: "trainmanagement", component: <TrainManagement/> },
+    // Flight Management
+    { url: "flightuserprofile", component: <FlightUserProfiles/> },
+    { url: "flightbookinginformation", component: <FlightBookingInformation/> },
+    { url: "flightbookingmanagement", component: <FlightBookingManagement/> },
+    { url: "flightmanagement", component: <FlightManagement/> },
+     // Hotel Management
+    { url: "hotelbookingmanagement", component: <HotelBookingManagement/> },
+    { url: "hotelmanagement", component: <HotelManagement/> },
+    { url: "hoteluserprofile", component: <HotelUserProfiles/> },
+
     { url: "post-details", component: <PostDetails/> },
     { url: "email-compose", component: <Compose/> },
     { url: "email-inbox", component: <Inbox/> },

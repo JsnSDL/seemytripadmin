@@ -1,0 +1,88 @@
+[
+    {
+      "userId": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1234567890",
+      "bookings": [
+        {
+          "bookingId": "B001",
+          "hotelName": "The Grand Hotel",
+          "roomType": "Deluxe",
+          "checkInDate": "2024-10-01",
+          "checkOutDate": "2024-10-05",
+          "status": "Confirmed",
+          "totalAmount": 500
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+0987654321",
+      "bookings": [
+        {
+          "bookingId": "B002",
+          "hotelName": "Sunrise Suites",
+          "roomType": "Standard",
+          "checkInDate": "2024-11-15",
+          "checkOutDate": "2024-11-18",
+          "status": "Cancelled",
+          "totalAmount": 300
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "name": "Michael Johnson",
+      "email": "michael.johnson@example.com",
+      "phone": "+1122334455",
+      "bookings": [
+        {
+          "bookingId": "B003",
+          "hotelName": "Beachside Resort",
+          "roomType": "Suite",
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-25",
+          "status": "Pending",
+          "totalAmount": 1000
+        }
+      ]
+    },
+    {
+      "userId": 4,
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "phone": "+5566778899",
+      "bookings": [
+        {
+          "bookingId": "B004",
+          "hotelName": "Mountain View Lodge",
+          "roomType": "Premium",
+          "checkInDate": "2024-09-05",
+          "checkOutDate": "2024-09-10",
+          "status": "Confirmed",
+          "totalAmount": 750
+        }
+      ]
+    },
+    {
+      "userId": 5,
+      "name": "Chris Lee",
+      "email": "chris.lee@example.com",
+      "phone": "+6677889900",
+      "bookings": [
+        {
+          "bookingId": "B005",
+          "hotelName": "City Central Hotel",
+          "roomType": "Deluxe",
+          "checkInDate": "2024-08-12",
+          "checkOutDate": "2024-08-16",
+          "status": "Completed",
+          "totalAmount": 450
+        }
+      ]
+    }
+  ]
+  
