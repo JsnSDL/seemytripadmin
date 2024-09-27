@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const session = require('express-session');
 const dotenv = require('dotenv');
 
 const authRoutes = require('./routes/authRoute');
@@ -8,7 +7,7 @@ const userRoutes = require('./routes/userRoute');
 const revenueRoutes = require('./routes/revenueRoute');
 const trainRoutes = require('./routes/trainsRoute');
 const twilioRouter = require('./routes/twilio-sms');
-const emailRouter = require('./routes/twilio-email');
+const emailRouter = require('./routes/email-auth');
 
 dotenv.config(); // Load environment variables
 
@@ -18,12 +17,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(session({
-    secret: process.env.SECRET || 'default_secret', // Use a secure secret
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Set to true if using HTTPS
-}));
 
 // Routes
 app.use('/api', authRoutes);
